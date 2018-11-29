@@ -16,11 +16,11 @@ def send_simple_message(email):
 
 @app.route("/")
 def hello():
-    return "Hello World"
+    return render_template("hello.html")
 
-@app.route("/<name>")
-def hello_someone(name):
-        return render_template("hello.html", name=name.title())
+# @app.route("/<name>")
+# def hello_someone(name):
+#         return render_template("hello.html", name=name.title())
 
 @app.route("/signup", methods=["POST"])
 def sign_up():
