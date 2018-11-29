@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
+from os import environ
 import request
+
 app = Flask("MyApp")
 
 def send_simple_message(email):
@@ -26,7 +28,7 @@ def sign_up():
     email = form_data["email"]
     send_simple_message(email)
     return "Email Sent to: {}".format(email)
-from os import environ
+
 app.run(host='0.0.0.0',debug=True, port=environ.get("PORT", 5000))
 
 #
@@ -44,17 +46,17 @@ app.run(host='0.0.0.0',debug=True, port=environ.get("PORT", 5000))
 #     print("Do you want to roll again? Y/N")
 #     repeat = ("y" or "yes") in input().lower()
 
-import random
-min = 1
-max = 6
-
-roll_again = "yes"
-
-while roll_again == "yes" or roll_again == "y":
-    print "Rolling the dices..."
-    print "The values are...."
-    print random.randint(min, max)
-    print random.randint(min, max)
-    print random.randint(min, max)
-
-    roll_again = raw_input("Roll the dices again?")
+# import random
+# min = 1
+# max = 6
+#
+# roll_again = "yes"
+#
+# while roll_again == "yes" or roll_again == "y":
+#     print "Rolling the dices..."
+#     print "The values are...."
+#     print random.randint(min, max)
+#     print random.randint(min, max)
+#     print random.randint(min, max)
+#
+#     roll_again = raw_input("Roll the dices again?")
