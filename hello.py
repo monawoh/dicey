@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from os import environ
-import request
+import requests
 
 app = Flask("MyApp")
 
